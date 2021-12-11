@@ -1,4 +1,6 @@
-﻿![](https://javascript30.com/images/JS3-social-share.png)
+My clone of the JS30 repo - Switched from a fork of the original to the clone after doing the first challenge, so all commits and branches relating to it have been lost 😓 
+
+![](https://javascript30.com/images/JS3-social-share.png)
 
 # JavaScript30
 
