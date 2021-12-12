@@ -9,7 +9,8 @@
 
     <div class="clock">
       <div class="clock-face">
-        <div class="hand hour-hand"></div>
+        <div class="hand hour-hand" style="
+          transform: rotate(30deg)"></div>
         <div class="hand min-hand"></div>
         <div class="hand second-hand"></div>
       </div>
@@ -57,11 +58,13 @@
     }
 
     .hand {
-      width: 50%;
+      border-radius: 999em; /* 3px */
+      width: 51%;
       height: 6px;
       background: black;
       position: absolute;
       top: 50%;
+      transform-origin: 98%;
     }
 
   </style>
