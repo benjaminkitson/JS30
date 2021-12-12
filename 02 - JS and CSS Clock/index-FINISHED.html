@@ -58,7 +58,6 @@
 
     .hand {
       width: 50%;
-      height: 6px;
       background: black;
       position: absolute;
       top: 50%;
@@ -67,6 +66,20 @@
       transition: all 0.05s;
       transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     }
+
+    .second-hand .hand {
+      height: 4px;
+    }
+
+    .minute-hand .hand {
+      height: 6px;
+    }
+
+    .hour-hand .hand {
+      height: 8px;
+    }
+
+
 </style>
 
 <script>
