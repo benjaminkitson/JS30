@@ -9,8 +9,7 @@
 
     <div class="clock">
       <div class="clock-face">
-        <div class="hand hour-hand" style="
-          transform: rotate(30deg)"></div>
+        <div class="hand hour-hand"></div>
         <div class="hand min-hand"></div>
         <div class="hand second-hand"></div>
       </div>
@@ -65,11 +64,22 @@
       position: absolute;
       top: 50%;
       transform-origin: 98%;
+      transform: rotate(90deg);
     }
 
   </style>
-
   <script>
+    function setDate() {
+      const now = new Date();
+      const milliseconds = now.getMilliseconds()
+      console.log(milliseconds)
+      const minutes = now.getMinutes()
+      console.log(minutes)
+      const hours = now.getHours()
+      console.log(hours)
+    }
+
+    // setInterval(setDate, 1);
 
 
   </script>
