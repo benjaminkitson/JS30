@@ -57,16 +57,29 @@
     }
 
     .hand {
-      width: 50%;
+      border-radius: 999em; /* 3px */
+      width: 51%;
       height: 6px;
       background: black;
       position: absolute;
       top: 50%;
+      transform-origin: 98%;
+      transform: rotate(90deg);
     }
 
   </style>
-
   <script>
+    function setDate() {
+      const now = new Date();
+      const milliseconds = now.getMilliseconds()
+      console.log(milliseconds)
+      const minutes = now.getMinutes()
+      console.log(minutes)
+      const hours = now.getHours()
+      console.log(hours)
+    }
+
+    // setInterval(setDate, 1);
 
 
   </script>
