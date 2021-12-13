@@ -15,7 +15,7 @@
     <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
 
     <label for="base">Base Color</label>
-    <input id="base" type="color" name="base" value="#ffc600">
+    <input id="base" type="color" name="base" value="#0280ff">
   </div>
 
   <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
@@ -26,16 +26,35 @@
       misc styles, nothing to do with CSS variables
     */
 
+    :root {
+      --base: #0280ff;
+      --spacing: 10px;
+      --blur: 10px;
+    }
+
+
+
     body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      background: #193549;
+      background: rgb(0, 37, 62);
       color: white;
       font-family: 'helvetica neue', sans-serif;
       font-weight: 100;
       font-size: 50px;
     }
 
+    .hl {
+      color: var(--base);
+    }
+
     .controls {
+      display: flex;
+      width: 55vw;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 50px;
     }
 
@@ -45,6 +64,14 @@
   </style>
 
   <script>
+    const inputs = document.querySelectorAll('.controls input');
+    console.log(inputs)
+
+    function handleUpdate() {
+      console.log("hello");
+    }
+
+    inputs.forEach(input => input.addEventListener('change', handleUpdate))
   </script>
 
 </body>
