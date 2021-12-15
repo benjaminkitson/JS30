@@ -40,9 +40,21 @@
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
+<<<<<<< HEAD
+=======
+    const names = inventors.map(function(inventor) {
+      return `${inventor.first} ${inventor.last}`
+    });
+>>>>>>> 19f0898 (third challenge completed)
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+
+    const nameSorted = inventors.sort(function(a,b) {
+      return a.year > b.year ? 1 : -1 ;
+    })
+
+    console.log(nameSorted)
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
