@@ -34,19 +34,27 @@
       'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
       'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
     ];
-    
+
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
 
+    const fifteen = inventors.filter(function(inventor) {
+      if(inventor.year >=  1500 && inventor.year < 1600){
+        return true;
+      }
+    });
+
+    console.log(fifteen)
+
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
-<<<<<<< HEAD
-=======
+
     const names = inventors.map(function(inventor) {
       return `${inventor.first} ${inventor.last}`
     });
->>>>>>> 19f0898 (third challenge completed)
 
+
+    console.log(names)
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
 
