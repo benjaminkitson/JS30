@@ -42,7 +42,7 @@
       if (currentYear - person.year > 18) {
         return true;
       }
-    })
+    });
 
     console.log(allAdult)
 
@@ -51,14 +51,23 @@
     // find the comment with the ID of 823423
 
     const findID = comments.find(function(comment){
-      if (comment.id == 823423) return comment
-    })
+      if (comment.id == 823423) return true;
+    });
 
     console.log(findID)
 
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+
+    const index = comments.findIndex(function(comment){
+      if (comment.id == 823423) return true;
+    });
+
+    const deletedComment = comments.splice(index, 1)
+
+    console.log(comments)
+    console.log(deletedComment)
 
   </script>
 </body>
