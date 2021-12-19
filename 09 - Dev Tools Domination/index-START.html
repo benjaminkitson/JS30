@@ -9,7 +9,7 @@
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
 
   <script>
-    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'Hugo', age: 8 }];
 
     function makeGreen() {
       const p = document.querySelector('p');
@@ -17,29 +17,71 @@
       p.style.fontSize = '50px';
     }
 
-    // Regular
+  // Regular
 
-    // Interpolated
+  console.log("Some console shenanigans:")
 
-    // Styled
+  // Interpolated
 
-    // warning!
+  console.log("An %s string", "interpolated")
 
-    // Error :|
+  // Styled
 
-    // Info
+  console.log("%c Sweet styled text", "font-size: 20px; background: green")
 
-    // Testing
+  // warning!
 
-    // clearing
+  console.warn("A warning!")
 
-    // Viewing DOM Elements
+  // Error :|
 
-    // Grouping together
+  console.error("An error!")
 
-    // counting
+  // Info
 
-    // timing
+  console.info("Some info could go here!")
+
+  // Testing
+
+  console.assert(2 + 2 === 5, '2 + 2 does not equal 5!')
+
+  // clearing
+
+  // console.clear()
+
+  // Viewing DOM Elements
+
+  const p = document.querySelector('p');
+
+  console.log(p)
+  console.dir(p)
+
+  // Grouping together
+
+  dogs.forEach(dog => {
+    console.groupCollapsed(`${dog.name}`)
+    console.log(`This is ${dog.name}`)
+    console.log(`${dog.name} is ${dog.age} years old.`)
+    console.log(`${dog.name} is ${dog.age * 7} dog years old.`)
+    console.groupEnd(`${dog.name}`)
+  })
+
+  // counting
+
+  console.count("How many?")
+  console.count("How many?")
+  console.count("How many?")
+  console.count("How many?")
+  console.count("How many?")
+
+  // timing
+
+  console.time("Timer")
+  console.log("How long will this setTimeout take?")
+    setTimeout(function() {
+      console.timeEnd("Timer")
+    }, 5000)
+
 
   </script>
 </body>
