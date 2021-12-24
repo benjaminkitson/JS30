@@ -15,9 +15,9 @@ function updateButton() {
 }
 
 function skip() {
-  let n = video.currentTime
-  let skip = this.getAttribute('data-skip')
-  video.currentTime = (skip + n)
+  let skip = this.dataset.skip;
+  console.log(skip)
+  video.currentTime += skip
 }
 
 video.addEventListener('click', togglePlay);
