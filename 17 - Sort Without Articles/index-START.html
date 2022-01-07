@@ -26,12 +26,12 @@
       padding: 0;
       box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
     }
-    
+
     #bands li {
       border-bottom: 1px solid #efefef;
       padding: 20px;
     }
-    
+
     #bands li:last-child {
       border-bottom: 0;
     }
@@ -48,6 +48,25 @@
 <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
+const splitBands = bands.map(band => band.split(' '))
+
+const sortedBands = splitBands.sort((a,b) => {
+  if ((a[0] === "The" || a[0] === "A" || a[0] === "An") && (b[0] === "The" || b[0] === "A" || b[0] === "An")) {
+    return a[1] > b[1]
+  } else if (a[0] === "The" || a[0] === "A" || a[0] === "An") {
+    return a[1] > b[0]
+  } else if (b[0] === "The" || b[0] === "A" || b[0] === "An") {
+    return a[0] > b[1]
+  } else {
+    return a[0] > b[0]
+  }
+})
+
+const finalBands = sortedBands.map(band => band.join(' '))
+
+bandsList = document.getElementById("bands")
+
+finalBands.forEach(band => bandsList.insertAdjacentHTML('beforeend', `<li>${band}</li>`))
 
 </script>
 
