@@ -182,6 +182,27 @@
     </li>
   </ul>
 <script>
+
+  let total = 0
+
+  function formatConversion(str) {
+    const minsHrs = str.split(':');
+    return (parseInt(minsHrs[0])*60) + parseInt(minsHrs[1])
+  }
+
+  function backToHours(mins) {
+    const hours = (mins - (mins % 60)) / 60
+    const minutes = (mins % 60).toString()
+    const fMins = minutes.length === 1 ? `0${minutes}` : minutes;
+    return hours + ":" + fMins
+  }
+
+  document.querySelectorAll('li').forEach((video) => {
+    total += formatConversion(video.getAttribute("data-time"))
+  })
+
+  console.log(backToHours(total))
+
 </script>
 </body>
 </html>
