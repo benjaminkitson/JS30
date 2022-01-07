@@ -25,7 +25,20 @@ function paintToCanvas() {
   setInterval(() => {
     ctx.drawImage(video, 0, 0, width, height);
   }, 16)
+}
 
+function takePhoto() {
+  snap.currentTime = 0;
+  snap.play()
+
+  const data = canvas.toDataURL('image/jpeg');
+  const link = document.createElement('a');
+  link.href = data;
+  link.setAttribute('download', 'dat boi');
+  link.innerHTML = `<img src="${data}" alt="Silly nonsense"/>`;
+  strip.insertBefore(link, strip.firstChild);
 }
 
 getVideo()
+
+video.addEventListener('canplay', paintToCanvas)
